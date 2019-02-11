@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- 전달 받은 question 출력하기 -->
+    <h1>{{ question.question_text }}</h1>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <!-- question에 대한 choice를 radio와 label로 출력하고 사용자가 선택한 후 제출하면 vote question_id와 함께 이동 -->
+    <form action="{% url 'vote' question.id %}" method="post">
+    <!-- post에서 위변조 없도록 해줌 -->
+    {% csrf_token %}
+    {% for choice in question.choice_set.all %}
+        <!-- value 는 choice.id임. vote에 이를 넘김으로써 사용자가 선택한 choice 알 수 있음 -->
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+    {% endfor %}
+    <input type="submit" value="Vote">
+    </form>
+  </body>
+</html>
