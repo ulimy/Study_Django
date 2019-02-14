@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/',include('polls.urls')),
     path('wordcount/',include('wordcount.urls')),
+    path('rest/',include('RestFramework.urls')),
 ]
