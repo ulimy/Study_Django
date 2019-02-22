@@ -2,10 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 def home(request):
-    return render(request,'home.html')
+    return render(request,'wordcount/home.html')
 
 def about(request):
-    return render(request,'about.html')
+    return render(request,'wordcount/about.html')
 
 def result(request):
     text = request.GET['fulltext']
@@ -18,4 +18,4 @@ def result(request):
         else:
             word_dictionary[word] = 1
 
-    return render(request,'result.html',{'text':text,"detail":word_dictionary.items(),"count":len(words)})
+    return render(request,'wordcount/result.html',{'text':text,"detail":word_dictionary.items(),"count":len(words)})
