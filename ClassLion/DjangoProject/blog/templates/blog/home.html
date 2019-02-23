@@ -21,7 +21,7 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="{% url 'new' %}">글쓰기</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,7 +47,7 @@
 
     {% for blog in blogs.all %}
     <br />
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 50rem;">
       <div class="card-body">
         <h5 class="card-title">{{blog.title}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
