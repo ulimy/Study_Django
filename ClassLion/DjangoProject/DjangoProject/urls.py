@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/',admin.site.urls),
     path('wordcount/',include('wordcount.urls')),
     path('blog/',include('blog.urls')),
+    path('portfolio/',include('portfolio.urls')),
 ]

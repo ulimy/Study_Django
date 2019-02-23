@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'wordcount.apps.WordcountConfig',
     'blog.apps.BlogConfig',
+    'portfolio.apps.PortfolioConfig',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    # static 파일이 존재하는 곳
+    os.path.join(BASE_DIR,'portfolio','static')
+]
+
+# static 파일 모으기
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
+# media 파일 모으기
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+MEDIA_URL = '/media/'
