@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'rest_framework',
     'snippets.apps.SnippetsConfig',
+    'restapi.apps.RestapiConfig',
 ]
 
 MIDDLEWARE = [
